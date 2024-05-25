@@ -18,26 +18,28 @@ Test Teardown       Close Browser
 Scenario: Successfully sign in as a natural person
     Given I am on Bookstore Demo web site
       And I go to log in or sign in page
-     When I fill register Form  
-          ...  name=Lorem ipsum  mail=lorem@ipsum.com  pass=foo123
-          ...  confirm_pass=foo123  business_entity=Pessoa Física
+     When I fill Lorem ipsum in name text field
+      And I fill lorem@ipsum.com in e-mail text field
+      And I fill foo123 in password text field  
+      And I fill foo123 in confirm password text field
+      And I select Pessoa Física in business entity combo box
       And I accept the terms of use
       And I submit register form
-     Then I should see a success message
-          ...  message=Lorem ipsum, teu cadastro foi realizado com sucesso!
+     Then I should see the Lorem ipsum, teu cadastro foi realizado com sucesso! success message
       And I should see My Wish List
       And I should see My Orders
 
 Scenario: Successfully sign in as a juridical person
     Given I am on Bookstore Demo web site
       And I go to log in or sign in page
-     When I fill register Form  
-          ...  name=Lorem ipsum LTDA  mail=contact@ipsum.com  pass=foo123
-          ...  confirm_pass=foo123  business_entity=Pessoa Jurídica
+     When I fill Lorem ipsum LTDA in name text field
+      And I fill contact@ipsum.com in e-mail text field
+      And I fill foo123 in password text field  
+      And I fill foo123 in confirm password text field
+      And I select Pessoa Jurídica in business entity combo box
       And I accept the terms of use
       And I submit register form
-     Then I should see a success message
-          ...  message=Lorem ipsum LTDA, teu cadastro foi realizado com sucesso!
+     Then I should see the Lorem ipsum LTDA, teu cadastro foi realizado com sucesso! success message
       And I should see My Wish List
       And I should see My Orders
 
